@@ -96,18 +96,34 @@ public class CircuitPanel extends JPanel implements ActionListener {
     }
 
     private void buildTestComponents() {
-        CircuitComponent c1, c2, c3, c4, c5, c6;
+        CircuitComponent c1, c2, c3, c4, c5, c6, c7, c8, c9, c10;
         components.add(c1 = new CircuitComponent(20, 20, 30, 40));
-        components.add(c2 = new CircuitComponent(100,20,60,40));
+        components.add(c2 = new CircuitComponent(200,20,60,40));
         components.add(c3 = new CircuitComponent(20, 80, 10, 40));
         components.add(c4 = new CircuitComponent(200, 140, 50, 40));
         c4.name = "Prostokącik";
         components.add(c5 = new ResistorView(150, 200));
-        components.add(c6 = new ResistorView(10, 250));
+        components.add(c6 = new ResistorView(280, 350));
         c6.setOrientation(CircuitComponent.Orientation.Vertical);
 
         c5.name = "R5";
         c6.name = "R6";
+
+        components.add(c7 = new CapacitorView(80, 350));
+        c7.setOrientation(CircuitComponent.Orientation.Vertical);
+        c7.name = "Kondensator";
+
+        components.add(c8 = new InductorView(350, 350));
+        c8.setOrientation(CircuitComponent.Orientation.Vertical);
+        c8.name = "cewka";
+
+        components.add(c9 = new VoltageSource( 220 , 250));
+        c9.setOrientation(CircuitComponent.Orientation.Horizontal);
+        c9.name = "źródło napięciowe";
+
+        components.add(c10 = new ElectricitySource( 20 , 250));
+        c10.setOrientation(CircuitComponent.Orientation.Vertical);
+        c10.name = "źródło prądowe";
 
         connections.add(new CircuitConnection(c1, c2));
         connections.add(new CircuitConnection(c3, c2));
